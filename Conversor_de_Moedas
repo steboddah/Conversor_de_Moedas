@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Conversor_de_Moedas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            Console.WriteLine("Qual é a cotação do dólar? "); //dados do usuario
+            double cotacao = double.Parse(Console.ReadLine());
+            Console.WriteLine("Quantos dólares você ira comprar? ");
+            double CDolar = double.Parse(Console.ReadLine());
+
+           
+            double ValorPago = cotacao * CDolar; // calculo do valor
+            Console.WriteLine($"Valor a ser pago em reais = ${ValorPago} ");
+
+           
+          
+            double IOF = 4.08; // calculo do valor total IOF
+            double IOFC = ValorPago * 4.08 / 100;
+            double ValorTotal = ValorPago + IOFC;
+
+           
+            Console.WriteLine($"Valor a ser pago de IOF = {IOF}% "); //exibicao dos valores IOF e de compra das moedas
+            Console.WriteLine("ATENÇÃO: VALOR DE IOF PARA PESSOA FISICA DE SETEMBRO DE 2021");
+            Console.WriteLine($"Valor total da compra com IOF = ${ValorTotal} ");
+            Console.ReadKey();
+        }
+    }
+}
